@@ -135,6 +135,12 @@ input {
     left: 0;
     right: 0;
     top: 1.8rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+    text-align: center;
+    margin: auto;
 }
 /*==MAIN==*/
 
