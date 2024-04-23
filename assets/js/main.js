@@ -19,3 +19,71 @@ const tabs = document.querySelectorAll('[data-target]'),
             tab.classList.add('skills__active');
         })
       })
+
+
+
+/*--MIXITUP FILTER PORTFOLIO--*/
+let mixerPortfolio = mixitup('.work__container', {
+    selectors: {
+        target: '.work__card'
+    },
+    animation: {
+        duration: 300
+    }
+})
+
+
+/*--Link Active Work--*/
+const linkWork = document.querySelectorAll('.work__item');
+
+function activeWork(){
+    linkWork.forEach(l => l.classList.remove('active-work'));
+    this.classList.add('active-work');
+}
+
+linkWork.forEach(l => l.addEventListener('click', activeWork));
+
+/*--Work PopUp--*/
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('work__button')){
+        togglePortfolioPopup();
+        PortfolioItemDetails(e.target.parentElement);
+    }
+})
+
+function togglePortfolioPopup(){
+    document.querySelector(".portfolio__popup").classList.toggle("portfolio__popup-open");
+}
+
+document.querySelector('.portfolio__popup-close').addEventListener('click', togglePortfolioPopup);
+
+function PortfolioItemDetails(portfolioItem){
+    document.querySelector('.pp__thumbnail img').src = portfolioItem.querySelector('.work__img').src;
+    document.querySelector('.portfolio__popup-subtitle span').innerHTML = portfolioItem.querySelector('.work__title').innerHTML;
+    document.querySelector('.portfolio__popup-body span').innerHTML = portfolioItem.querySelector('.portfolio__item-details').innerHTML;
+
+}
+
+
+/*---SERVICES MODAL---*/
+const modalViews = document.querySelectorAll('.services__modal'),
+      modalBtns = document.querySelectorAll('.services__button'),
+      modalCloses = document.querySelectorAll('.services__modal-close')
+
+let modal = function(modalClick) {
+    modalViews[modalClick].classList.add('active-modal')
+}
+
+modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener('click', () => {
+        modal(i)
+    })
+})
+
+modalCloses.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal')
+        })
+    })
+})
