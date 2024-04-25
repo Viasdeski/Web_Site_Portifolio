@@ -8,7 +8,7 @@
     --hue-color:242;
 
     /* HSL COLOR MODE*/
-    --skin-color: hsl(342, 92%, 46%);
+    --skin-color: hsl(263, 94%, 43%);
     --title-color: hsl(var(--hue-color), 8%, 95%);
     --text-color: hsl(var(--hue-color), 8%, 85%);
     --body-color: hsl(var(--hue-color), 19%, 5%);
@@ -246,16 +246,19 @@ input {
 
 /*==HOME SECTION==*/
 .home {
-    background: url(../img/home-img.jpg);
     background-position: center center;
     background-size: cover;
     height: 100vh;
+    display: flex;
 }
 
 .home__container {
-    position: relative;
+    position: absolute;
     height: 100%;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
 }
 
 .home__social {
@@ -270,6 +273,7 @@ input {
 .home__social-follow {
     font-weight: var(--font-medium);
     position: relative;
+    color: var(--skin-color);
 }
 
 .home__social-follow::after {
@@ -290,21 +294,27 @@ input {
 
 .home__social-link:hover {
     transform: translateY(.25rem);
+    color: var(--skin-color);
 }
 
 .home__img {
-    display: none;
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 1%;
+    display: flex;
+    transition: box-shadow 0.3s ease;
+    order: 2;
+    margin-left: 25rem;
 }
 
-.home__subtitle {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-    margin-bottom: var(--mb-0-75);
+.home__img:hover {
+    box-shadow: 0 5px 10px var(--skin-color);
 }
 
-.home__description {
-    max-width: 450px;
-    margin-bottom: var(--mb-2);
+.home_data {
+    order: 1;
 }
 
 .my__info {
@@ -313,6 +323,7 @@ input {
     position: absolute;
     left: 0;
     bottom: 1rem;
+    order: 3;
 }
 
 .info__item {
