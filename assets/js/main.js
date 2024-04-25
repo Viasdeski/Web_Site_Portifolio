@@ -87,3 +87,43 @@ modalCloses.forEach((modalClose) => {
         })
     })
 })
+
+
+/*---INITIALIZE SWIPPER---*/
+let swiper = new Swiper('.testimonials__container', {
+    spaceBetween: 24,
+    loop: true,
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        576: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 48,
+        },
+      },
+})
+
+
+/*---INPUT ANIMATION---*/
+const inputs = document.querySelectorAll('.input');
+
+function focusFunc(){
+    let parent = this.parentNode;
+    parent.classList.add('focus');
+}
+
+function blurFunc(){
+    let parent = this.parentNode;
+    if(this.value == "") parent.classList.remove('focus');
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('focus', focusFunc);
+    input.addEventListener('blur', blurFunc);
+})
