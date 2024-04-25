@@ -5,14 +5,14 @@
 
 :root {
     /*==COLORS==*/
-    --hue-color:242;
+    --hue-color: 242;
 
     /* HSL COLOR MODE*/
     --skin-color: hsl(342, 92%, 46%);
     --title-color: hsl(var(--hue-color), 8%, 95%);
     --text-color: hsl(var(--hue-color), 8%, 85%);
     --body-color: hsl(var(--hue-color), 19%, 5%);
-    --box-color: hsl(var(--hue-color),14%, 10%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
     --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
 
@@ -21,17 +21,17 @@
 
 
     /* 0.5rem = 8px, 1rem = 16px, 1.5rem = 24px ...*/
-    --biggest-font-size:3rem;
-    --h1-font-size:2.25rem;
-    --h2-font-size:1.5rem;
-    --h3-font-size:1.5rem;
-    --normal-font-size:1.0rem;
-    --small-font-size:0.875rem;
-    --smaller-font-size:0.813rem;
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1.0rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
 
     /*===Fonte Weight===*/
     --font-medium: 500;
-    --font-bold:600;
+    --font-bold: 600;
 
 
     /*===Margenes Bottom===*/
@@ -53,14 +53,14 @@
 /* Responsive Typography */
 
 @media screen and (max-width: 1024px) {
-    :root{
-        --biggest-font-size:2rem;
-        --h1-font-size:1.5rem;
-        --h2-font-size:1.25rem;
-        --h3-font-size:1.125rem;
-        --normal-font-size:0.938rem;
-        --small-font-size:0.813rem;
-        --smaller-font-size:0.75rem;
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
     }
 }
 
@@ -87,7 +87,9 @@ body {
     color: var(--text-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--title-color);
     font-weight: var(--font-bold);
 }
@@ -121,7 +123,7 @@ input {
 .container {
     max-width: 1250px;
     margin-left: auto;
-    margin-right: auto ;
+    margin-right: auto;
 }
 
 .grid {
@@ -140,7 +142,7 @@ input {
     margin-bottom: var(--mb-3);
 }
 
-.section__title::before{
+.section__title::before {
     content: attr(data-heading);
     display: block;
     font-size: var(--normal-font-size);
@@ -220,7 +222,7 @@ input {
 }
 
 /*ACTIVE LINK*/
-.nav__link.active-link, 
+.nav__link.active-link,
 .nav__link:hover {
     color: var(--skin-color);
 }
@@ -361,7 +363,7 @@ input {
     z-index: -1;
     transform-origin: center;
     transform: scale(0);
-    border-radius: .25rem ;
+    border-radius: .25rem;
     transition: .4s;
 }
 
@@ -451,7 +453,7 @@ input {
 }
 
 .timeline__item::before {
-    content:'';
+    content: '';
     width: 1px;
     position: absolute;
     left: .48rem;
@@ -922,7 +924,7 @@ input {
 
 /*---SWIPER CLASS---*/
 .swiper-pagination-bullet {
-    background-color:var(--box-color);
+    background-color: var(--box-color);
 }
 
 .swiper-pagination-bullet-active {
@@ -1107,7 +1109,7 @@ textarea.input {
     column-gap: 2rem;
 }
 
-.footer__link:hover{
+.footer__link:hover {
     color: var(--skin-color);
 }
 

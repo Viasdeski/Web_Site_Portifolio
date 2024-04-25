@@ -1,24 +1,24 @@
 /*---SKILLS TABS---*/
 const tabs = document.querySelectorAll('[data-target]'),
-      tabContent = document.querySelectorAll('[data-content]');
+    tabContent = document.querySelectorAll('[data-content]');
 
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = document.querySelector(tab.dataset.target);
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target);
 
-            tabContent.forEach(tabContents => {
-                tabContents.classList.remove('skills__active');
-            })
-
-            target.classList.add('skills__active');
-
-            tabs.forEach(tab => {
-                tab.classList.remove('skills__active');
-            })
-
-            tab.classList.add('skills__active');
+        tabContent.forEach(tabContents => {
+            tabContents.classList.remove('skills__active');
         })
-      })
+
+        target.classList.add('skills__active');
+
+        tabs.forEach(tab => {
+            tab.classList.remove('skills__active');
+        })
+
+        tab.classList.add('skills__active');
+    })
+})
 
 
 
@@ -36,7 +36,7 @@ let mixerPortfolio = mixitup('.work__container', {
 /*--Link Active Work--*/
 const linkWork = document.querySelectorAll('.work__item');
 
-function activeWork(){
+function activeWork() {
     linkWork.forEach(l => l.classList.remove('active-work'));
     this.classList.add('active-work');
 }
@@ -45,19 +45,19 @@ linkWork.forEach(l => l.addEventListener('click', activeWork));
 
 /*--Work PopUp--*/
 document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('work__button')){
+    if (e.target.classList.contains('work__button')) {
         togglePortfolioPopup();
         PortfolioItemDetails(e.target.parentElement);
     }
 })
 
-function togglePortfolioPopup(){
+function togglePortfolioPopup() {
     document.querySelector(".portfolio__popup").classList.toggle("portfolio__popup-open");
 }
 
 document.querySelector('.portfolio__popup-close').addEventListener('click', togglePortfolioPopup);
 
-function PortfolioItemDetails(portfolioItem){
+function PortfolioItemDetails(portfolioItem) {
     document.querySelector('.pp__thumbnail img').src = portfolioItem.querySelector('.work__img').src;
     document.querySelector('.portfolio__popup-subtitle span').innerHTML = portfolioItem.querySelector('.work__title').innerHTML;
     document.querySelector('.portfolio__popup-body span').innerHTML = portfolioItem.querySelector('.portfolio__item-details').innerHTML;
@@ -67,10 +67,10 @@ function PortfolioItemDetails(portfolioItem){
 
 /*---SERVICES MODAL---*/
 const modalViews = document.querySelectorAll('.services__modal'),
-      modalBtns = document.querySelectorAll('.services__button'),
-      modalCloses = document.querySelectorAll('.services__modal-close')
+    modalBtns = document.querySelectorAll('.services__button'),
+    modalCloses = document.querySelectorAll('.services__modal-close')
 
-let modal = function(modalClick) {
+let modal = function (modalClick) {
     modalViews[modalClick].classList.add('active-modal')
 }
 
@@ -100,27 +100,27 @@ let swiper = new Swiper('.testimonials__container', {
     },
     breakpoints: {
         576: {
-          slidesPerView: 2,
+            slidesPerView: 2,
         },
         768: {
-          slidesPerView: 2,
-          spaceBetween: 48,
+            slidesPerView: 2,
+            spaceBetween: 48,
         },
-      },
+    },
 })
 
 
 /*---INPUT ANIMATION---*/
 const inputs = document.querySelectorAll('.input');
 
-function focusFunc(){
+function focusFunc() {
     let parent = this.parentNode;
     parent.classList.add('focus');
 }
 
-function blurFunc(){
+function blurFunc() {
     let parent = this.parentNode;
-    if(this.value == "") parent.classList.remove('focus');
+    if (this.value == "") parent.classList.remove('focus');
 }
 
 inputs.forEach((input) => {
@@ -133,7 +133,7 @@ const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', navHighlighter);
 
-function navHighlighter(){
+function navHighlighter() {
     let scrollY = window.pageYOffset;
 
     sections.forEach(current => {
@@ -141,9 +141,9 @@ function navHighlighter(){
         const sectionTop = current.offsetTop - 50;
         sectionId = current.getAttribute('id');
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
-        }else {
+        } else {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
         }
     })
