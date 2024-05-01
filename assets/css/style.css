@@ -335,10 +335,6 @@ input {
     box-shadow: 0 5px 10px var(--skin-color);
 }
 
-.home_data {
-   
-}
-
 .my__info {
     display: flex;
     column-gap: 1.8rem;
@@ -1442,7 +1438,6 @@ textarea.input {
     .portfolio__popup-close {
         top: .5rem;
     }
-    
 }
 
 @media  screen and (max-width: 576px) {
@@ -1523,6 +1518,11 @@ textarea.input {
     .footer__links {
         justify-self: flex-start;
     }
+
+    .button {
+        font-size: var(--small-font-size);
+        padding: 0.2rem 0 0.2rem 0;
+    }
 }
 
 @media  screen and (max-width: 350px) {
@@ -1531,7 +1531,7 @@ textarea.input {
         margin-right: var(--mb-1);
     }
 
-    .home__social{
+    .home__social {
         position: relative;
     }
 
@@ -1573,6 +1573,10 @@ textarea.input {
 
     .services__content {
         padding-right: 3.5rem;
+    }
+
+    .button {
+        font-size: var(--small-font-size);
     }
     
 }
