@@ -270,7 +270,7 @@ input {
 .home {
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 80vh;
     display: flex;
 }
 
@@ -1209,6 +1209,10 @@ textarea.input {
         grid-template-columns: repeat(2, 330px);
         gap: 2.5rem;
     }
+
+    .home__img {
+        margin: 0 0 0 12rem;
+    }
     
 }
 
@@ -1218,8 +1222,10 @@ textarea.input {
         margin-right: var(--mb-1-5);
     }
 
-    .nav__toggle{
+    .nav__toggle {
         visibility: visible;
+        right: 1.5rem;
+        z-index: var(--z-fixed);
     }
 
     .sidebar {
@@ -1355,6 +1361,12 @@ textarea.input {
         width: 250px;
     }
 
+    .home__img {
+        width: 50%;
+        height: 50%;
+        margin: 0 0 0 3rem;
+    }
+
     .nav__toggle{
         visibility: visible;
     }
@@ -1451,20 +1463,16 @@ textarea.input {
     }
 
     .home__img {
-        display: flex;
-        top: 50%;
-        left: 50%;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
         width:50%;
-        height: auto;
-        margin: 0 0 0 5rem
+        height: 50%;
+        margin: 0 0 0 1rem
     }
 
     .home__social {
-        display: flex;
+        position: relative;
         left: initial;
         right: -1px;
+        top: -5%;
         flex-direction: column;
         row-gap: 3.5rem ;
     }
