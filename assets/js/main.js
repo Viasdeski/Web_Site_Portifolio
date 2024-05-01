@@ -1,19 +1,28 @@
 /*--SHOW SIDEBAR--*/
 const navMenu = document.getElementById('sidebar'),
       navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close');
+      navClose = document.getElementById('nav-close'),
+      navLink = document.querySelectorAll('.nav__link');
 
 if(navToggle) {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-sidebar')
+        navMenu.classList.add('show-sidebar');
     })
 }
 
 if(navClose) {
     navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-sidebar')
+        navMenu.classList.remove('show-sidebar');
     })
 }
+
+navLink.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show-sidebar');
+    });
+})
+
+
 
 
 
