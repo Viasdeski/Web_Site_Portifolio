@@ -270,7 +270,7 @@ input {
 .home {
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 80vh;
     display: flex;
 }
 
@@ -328,7 +328,7 @@ input {
     display: flex;
     transition: box-shadow 0.3s ease;
     order: 2;
-    margin-left: 35rem;
+    margin: 0 0 0 20rem;
 }
 
 .home__img:hover {
@@ -1209,6 +1209,10 @@ textarea.input {
         grid-template-columns: repeat(2, 330px);
         gap: 2.5rem;
     }
+
+    .home__img {
+        margin: 0 0 0 12rem;
+    }
     
 }
 
@@ -1218,8 +1222,10 @@ textarea.input {
         margin-right: var(--mb-1-5);
     }
 
-    .nav__toggle{
+    .nav__toggle {
         visibility: visible;
+        right: 1.5rem;
+        z-index: var(--z-fixed);
     }
 
     .sidebar {
@@ -1355,6 +1361,12 @@ textarea.input {
         width: 250px;
     }
 
+    .home__img {
+        width: 50%;
+        height: 50%;
+        margin: 0 0 0 3rem;
+    }
+
     .nav__toggle{
         visibility: visible;
     }
@@ -1451,18 +1463,16 @@ textarea.input {
     }
 
     .home__img {
-        display: flex;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width:50%;
-        height: auto;
+        height: 50%;
+        margin: 0 0 0 1rem
     }
 
     .home__social {
-        display: flex;
+        position: relative;
         left: initial;
         right: -1px;
+        top: -5%;
         flex-direction: column;
         row-gap: 3.5rem ;
     }
@@ -1513,66 +1523,6 @@ textarea.input {
     .footer__links {
         justify-self: flex-start;
     }
-}
-
-@media  screen and (max-width: 540px) {
-    .container {
-        margin-left: var(--mb-1) ;
-        margin-right: var(--mb-1);
-    }
-
-    .home__social {
-        position: absolute;
-        left: initial; 
-        right: 0; 
-        flex-direction: column;
-        row-gap: 3.5rem;
-    }
-
-    .home__img {
-        visibility: hidden;
-    }
-
-    .home__title {
-        font-size: var(--h1-font-size);
-    }
-
-    .home__subtitle {
-        font-size: var(--normal-font-size);
-    }
-
-    .about__info {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: .5rem;
-    }
-
-    .contact__container,
-    .work__container,
-    .skills__container,
-    .qualification__container {
-        grid-template-columns: 1fr;
-    }
-
-    .skills__title {
-        font-size: var(--normal-font-size);
-    }
-
-    .work__item {
-        font-size: var(--small-font-size);
-    }
-
-    .work__filters {
-        column-gap: .25rem;
-    }
-
-    .services__container {
-        grid-template-columns: max-content;
-    }
-
-    .services__content {
-        padding-right: 3.5rem;
-    }
-    
 }
 
 @media  screen and (max-width: 350px) {
