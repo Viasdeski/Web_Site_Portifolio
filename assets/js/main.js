@@ -23,9 +23,6 @@ navLink.forEach(link => {
 })
 
 
-
-
-
 /*---SKILLS TABS---*/
 const tabs = document.querySelectorAll('[data-target]'),
       tabContent = document.querySelectorAll('[data-content]');
@@ -172,6 +169,7 @@ function navHighlighter(){
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
             history.pushState(null, null, '#' + sectionId);
+            
         }else {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
         }
